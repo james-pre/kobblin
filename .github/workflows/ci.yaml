@@ -1,0 +1,26 @@
+name: Continuous Integration
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+    workflow_call:
+    pull_request:
+
+jobs:
+    ubuntu:
+        name: Ubuntu
+        uses: ./.github/workflows/ci-single-platform.yaml
+        with:
+            platform: ubuntu-latest
+    macos:
+        name: MacOS
+        uses: ./.github/workflows/ci-single-platform.yaml
+        with:
+            platform: macos-latest
+    win:
+        name: Windows
+        uses: ./.github/workflows/ci-single-platform.yaml
+        with:
+            platform: windows-latest

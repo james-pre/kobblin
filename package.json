@@ -1,0 +1,66 @@
+{
+  "name": "kobblin",
+  "globalName": "Kobblin",
+  "version": "0.0.0-prototype",
+  "description": "A",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "keywords": [],
+  "bin": {
+    "build": "scripts/build.js"
+  },
+  "files": [
+    "dist",
+    "src",
+    "license.md",
+    "tsconfig.json",
+    "eslint.shared.js"
+  ],
+  "type": "module",
+  "homepage": "https://github.com/__repo__",
+  "author": "James Prevett <jp@jamespre.dev> (https://jamespre.dev)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/__repo__.git"
+  },
+  "bugs": {
+    "url": "https://github.com/__repo__/issues"
+  },
+  "engines": {
+    "node": ">= 16"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "tsc -p tsconfig.json --noEmit && eslint src",
+    "build": "node scripts/build.js --entry src/index.ts",
+    "build:docs": "typedoc",
+    "dev": "npm run build -- --watch",
+    "prepublishOnly": "npm run build"
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.10.0",
+    "@fal-works/esbuild-plugin-global-externals": "^2.1.2",
+    "@stylistic/eslint-plugin": "^2.7.2",
+    "@types/eslint__js": "^8.42.3",
+    "esbuild": "^0.23.1",
+    "eslint": "^9.10.0",
+    "globals": "^15.9.0",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "typedoc": "^0.26.6",
+    "typedoc-plugin-remove-references": "^0.0.6",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.4.0"
+  }
+}
