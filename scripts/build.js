@@ -4,7 +4,8 @@ import { execSync } from 'node:child_process';
 import { parseArgs } from 'node:util';
 import { rmSync } from 'node:fs';
 import { globalExternals } from '@fal-works/esbuild-plugin-global-externals';
-import { name, globalName as varName } from '../package.json' with { type: 'json' };
+import _package from '../package.json' with { type: 'json' };
+const { name, globalName: varName } = _package;
 
 let buildCount = 0;
 
