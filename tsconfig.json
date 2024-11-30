@@ -13,7 +13,6 @@
 	"typedocOptions": {
 		"entryPoints": ["./src/index.ts"],
 		"out": "docs",
-		"name": "Kobblin",
-		"plugin": ["typedoc-plugin-remove-references"]
+		"name": "Kobblin"
 	}
 }
