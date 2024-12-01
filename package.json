@@ -1,7 +1,7 @@
 {
 	"name": "kobblin",
 	"globalName": "Kobblin",
-	"version": "0.0.0-prototype",
+	"version": "0.0.1",
 	"description": "A simple Typescript kernel",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
