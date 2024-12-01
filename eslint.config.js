@@ -43,5 +43,7 @@ export default tseslint.config({
 		'@typescript-eslint/no-unsafe-argument': 'off',
 		'@typescript-eslint/no-unsafe-call': 'off',
 		'@typescript-eslint/no-redundant-type-constituents': 'warn',
+		'@typescript-eslint/only-throw-error': 'off',
+		'@typescript-eslint/no-explicit-any': 'off',
 	},
 });

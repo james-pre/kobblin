@@ -54,7 +54,7 @@
 	},
 	"dependencies": {
 		"@types/node": "20.16",
-		"@zenfs/core": "^1.4.3",
+		"@zenfs/core": "^1.5.0",
 		"eventemitter3": "^5.0.1",
 		"readable-stream": "^4.5.2",
 		"ses": "^1.10.0",
