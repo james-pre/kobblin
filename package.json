@@ -2,7 +2,7 @@
 	"name": "kobblin",
 	"globalName": "Kobblin",
 	"version": "0.0.0-prototype",
-	"description": "A",
+	"description": "A simple Typescript kernel",
 	"main": "dist/index.js",
 	"types": "dist/index.d.ts",
 	"keywords": [],
@@ -38,7 +38,7 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"lint": "tsc -p tsconfig.json --noEmit && eslint src",
-		"build": "tsc -p tsconfig.json",
+		"build": "tsc -p tsconfig.json && cp src/*.d.ts dist",
 		"build:docs": "typedoc",
 		"prepublishOnly": "npm run build"
 	},
