@@ -1,4 +1,4 @@
-import { fs as _fs, bindContext, type BoundContext } from '@zenfs/core';
+import { bindContext, type BoundContext } from '@zenfs/core';
 import { resolve } from '@zenfs/core/path';
 import { EventEmitter } from 'eventemitter3';
 import 'ses';
