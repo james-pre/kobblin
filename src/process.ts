@@ -20,15 +20,13 @@ function _import_builtin(specifier: string, process: Process) {
 const _transform_imports_regex = /^import\s+((\*\s+as\s+(\w+))|(\{[^}]*\})|(\w+))?\s*from\s*['"]([^'"]+)['"];?|^import\s+['"]([^'"]+)['"];?/gm;
 
 function _transform_imports(text: string): string {
-	const _ = text.replaceAll(_transform_imports_regex, (match, _, namespace, nsName, namedImports, defaultImport, fromModule, sideEffectModule) => {
+	return text.replaceAll(_transform_imports_regex, (match, _, namespace, nsName, namedImports, defaultImport, fromModule, sideEffectModule) => {
 		if (sideEffectModule) return `__include('${sideEffectModule}');`;
 		if (namespace) return `const ${nsName} = __include('${fromModule}');`;
 		if (namedImports) return `const ${namedImports} = __include('${fromModule}');`;
 		if (defaultImport) return `const ${defaultImport} = __include('${fromModule}');`;
 		return match; // Default case, should never be hit if all import cases are handled.
 	});
-	console.log(_);
-	return _;
 }
 
 export class Process extends EventEmitter {
@@ -71,13 +69,9 @@ export class Process extends EventEmitter {
 			importNowHook(specifier: string): ModuleDescriptor {
 				return so_import(specifier, p);
 			},
-			get name() {
-				return p.name;
-			},
+			name: p.path,
 		};
 	}
-
-	public name?: string;
 
 	protected compartment: Compartment;
 
@@ -86,24 +80,33 @@ export class Process extends EventEmitter {
 	public readonly children = new List<Process>();
 
 	public constructor(
-		protected code: string,
+		protected path: string,
 		public readonly parent?: Process
 	) {
 		super();
+
 		this.fs = bindContext(this.parent?.fs.root ?? '/');
 		this.compartment = new Compartment(this.compartmentOptions());
+	}
+
+	public exec() {
 		try {
-			this.compartment.evaluate(code);
+			const content = this.fs.fs.readFileSync(this.path, 'utf8');
+			this.compartment.evaluate(content);
 		} catch (e: any) {
 			console.error(e);
 		}
 	}
 }
 
+/**
+ * @todo permissions
+ */
 export function spawn(this: Process | void, path: string): Process {
-	const fs = this?.fs.fs || _fs;
+	return new Process(path, this ?? undefined);
+}
 
-	const content = fs.readFileSync(path, 'utf8');
-	const proc = new Process(content, this ?? undefined);
-	return proc;
+export function exec(this: Process | void, path: string): void {
+	const task = spawn.call(this, path);
+	task.exec();
 }
