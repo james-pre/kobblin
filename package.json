@@ -43,20 +43,20 @@
 		"prepublishOnly": "npm run build"
 	},
 	"devDependencies": {
-		"@eslint/js": "^9.10.0",
+		"@eslint/js": "^9.16.0",
 		"@types/eslint__js": "^8.42.3",
-		"eslint": "^9.10.0",
+		"eslint": "^9.16.0",
 		"globals": "^15.9.0",
 		"prettier": "^3.3.3",
-		"typedoc": "^0.26.6",
-		"typescript": "^5.5.4",
-		"typescript-eslint": "^8.4.0"
+		"typedoc": "^0.27.2",
+		"typescript": "^5.7.2",
+		"typescript-eslint": "^8.16.0"
 	},
 	"dependencies": {
-		"@types/node": "20.16",
-		"@zenfs/core": "^1.5.0",
+		"@types/node": "^22.10.1",
+		"@zenfs/core": "^1.6.4",
 		"eventemitter3": "^5.0.1",
-		"readable-stream": "^4.5.2",
+		"patch-package": "^8.0.0",
 		"ses": "^1.10.0",
 		"utilium": "^1.1.1"
 	}

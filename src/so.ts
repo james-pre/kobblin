@@ -1,5 +1,5 @@
 /* Code for handling shared objects / libraries */
-
+import './fs.js';
 import { fs as _fs, ErrnoError, errorMessages, type Stats } from '@zenfs/core';
 import type { Process } from './process.js';
 import { X_OK } from '@zenfs/core/emulation/constants.js';
