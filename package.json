@@ -56,7 +56,6 @@
 		"@types/node": "^22.10.1",
 		"@zenfs/core": "^1.6.4",
 		"eventemitter3": "^5.0.1",
-		"patch-package": "^8.0.0",
 		"ses": "^1.10.0",
 		"utilium": "^1.1.1"
 	}
