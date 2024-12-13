@@ -5,6 +5,9 @@ import type { Process } from './process.js';
 import { X_OK } from '@zenfs/core/emulation/constants.js';
 import type { ModuleDescriptor } from 'ses';
 
+/**
+ * Used for optimization
+ */
 const _isLibLinkedToUsr = false;
 
 const so_regex = /^(lib)?(?<base>.+)\.(?<extension>so|js)(?<version>(\.\d+)*)$/;
