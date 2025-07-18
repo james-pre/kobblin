@@ -54,7 +54,7 @@
 	},
 	"dependencies": {
 		"@types/node": "^22.10.1",
-		"@zenfs/core": "^1.6.4",
+		"@zenfs/core": "^1.8.8",
 		"eventemitter3": "^5.0.1",
 		"ses": "^1.10.0",
 		"utilium": "^1.1.1"
