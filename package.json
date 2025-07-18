@@ -12,14 +12,14 @@
 	"files": [
 		"dist",
 		"src",
-		"license.md",
+		"LICENSE.md",
 		"tsconfig.json",
 		"eslint.shared.js"
 	],
 	"type": "module",
 	"homepage": "https://github.com/james-pre/kobblin",
 	"author": "James Prevett <jp@jamespre.dev> (https://jamespre.dev)",
-	"license": "MIT",
+	"license": "GPL-3.0-or-later",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/james-pre/kobblin.git"
